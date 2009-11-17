@@ -28,7 +28,7 @@ True
 3
 </property>
 <property type="string" id="commandTemplate" mode="w" >
-/usr/sbin/xm list ${here/id} | tail -1 | awk '{ print "cpu:" $$NF*10 }'
+/usr/sbin/xm list ${here/id} | tail -1 | awk '{ print "cpu:" $$NF*100 }'
 </property>
 <property type="int" id="cycletime" mode="w" >
 300
@@ -86,7 +86,7 @@ False
 %5.2lf%s
 </property>
 <property type="string" id="legend" mode="w" >
-${graphPoint/id}
+Guest CPU Utilization (%)
 </property>
 <property type="long" id="limit" mode="w" >
 -1
