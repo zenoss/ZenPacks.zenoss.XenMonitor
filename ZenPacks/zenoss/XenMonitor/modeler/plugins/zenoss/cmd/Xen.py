@@ -51,7 +51,7 @@ class Xen(CommandPlugin):
 
             try:
                 # Name  ID Mem(MiB) VCPUs State  Time(s)
-                name, id, memory, cpus, state, times = line.rsplit(' ', 5)
+                name, id, memory, cpus, state, times = line.rsplit(None, 5)
             except ValueError:
                 name = line.split()[0]
                 log.warn("Ignoring %s as data missing (eg ID, Mem,"

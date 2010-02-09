@@ -17,7 +17,7 @@ import os
 
 from Products.ZenTestCase.BaseTestCase import BaseTestCase
 from Products.DataCollector.ApplyDataMap import ApplyDataMap
-from ZenPacks.zenoss.ZenossVirtualHostMonitor.modeler.plugins.Xen \
+from ZenPacks.zenoss.XenMonitor.modeler.plugins.zenoss.cmd.Xen \
     import Xen
 
 
@@ -31,10 +31,15 @@ class TestXen(BaseTestCase):
         log.setLevel(logging.ERROR)
 
 
-    def testTruncatedData(self):
+    def _testTruncatedData(self, results, expectedVMs):
         """
         Data format can be truncated
         """
+        # Verify that the modeler plugin processes the data properly.
+        relmap = self.plugin.process(self.device, results, log)
+        self.assertEquals(len(relmap[0].maps), expectedVMs)
+
+    def testTruncatedData1(self):
         results = """Name ID Mem VCPUs State Time(s)
 AD01_SIMSPOC 53 1024 2 -b---- 14331.1
 AD02_SIMSPOC 43 1024 2 -b---- 15503.9
@@ -50,10 +55,16 @@ xenwin2k8x32_GOLD 2048 1 0.0
 xenwin2kx32_base 2048 1 28.8
 zenoss_Centos54x32 57 2050 2 -b---- 2185.9
 """
-        
-        # Verify that the modeler plugin processes the data properly.
-        relmap = self.plugin.process(self.device, results, log)
-        self.assertEquals(len(relmap[0].maps), 7)
+
+        self._testTruncatedData(results,7)
+
+    def testTruncatedData2(self):
+        results = """Name                                      ID Mem(MiB) VCPUs State   Time(s)
+Domain-0                                   0      294     1 r-----   1788.2
+xenguest1                                  7      199     1 -b----     34.5
+"""
+        self._testTruncatedData(results,1)
+
 
 def test_suite():
     from unittest import TestSuite, makeSuite
