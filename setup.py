@@ -2,11 +2,11 @@
 # These variables are overwritten by Zenoss when the ZenPack is exported
 # or saved.  Do not modify them directly here.
 NAME = 'ZenPacks.zenoss.XenMonitor'
-VERSION = '1.0.2'
+VERSION = '1.0.3'
 AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
-INSTALL_REQUIRES = ['Zenpacks.zenoss.ZenossVirtualHostMonitor']
+INSTALL_REQUIRES = ['ZenPacks.zenoss.ZenossVirtualHostMonitor']
 PREV_ZENPACK_NAME = ''
 COMPAT_ZENOSS_VERS = '>= 2.2'
 # STOP_REPLACEMENTS
