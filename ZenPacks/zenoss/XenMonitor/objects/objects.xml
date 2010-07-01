@@ -38,6 +38,9 @@ True
 </property>
 <tomanycont id='datapoints'>
 <object id='cpu' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The amount of CPU that is being used.
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 DERIVE
 </property>
