@@ -16,8 +16,6 @@ Plugin to gather information about virtual machines running
 under Xen
 """
 
-from sets import Set
-
 import Globals
 from Products.DataCollector.plugins.CollectorPlugin \
      import CommandPlugin
@@ -42,10 +40,10 @@ class Xen(CommandPlugin):
         log.debug('Results from %s = "%s"', self.command, results)
 
         rm = self.relMap()
-        before = Set(device.guestDevices)
+        before = set(device.guestDevices)
         # Skip the first two lines, which are
         # the header line and the domain-0 line.
-        for line in results.split('\n')[1:]:
+        for line in results.splitlines()[1:]:
             if not line or line.startswith('Domain-0'):
                 continue
 
@@ -61,7 +59,7 @@ class Xen(CommandPlugin):
 
             info = {}
             info['adminStatus'] = True
-            info['operStatus'] = (state.find('r') >= 0 or state.find('b') >= 0)
+            info['operStatus'] = ('r' in state or 'b' in state)
             info['memory'] = int(memory)
             info['osType'] = 'Unknown'
             info['displayName'] = name
