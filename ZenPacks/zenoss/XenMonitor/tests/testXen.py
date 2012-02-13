@@ -22,8 +22,8 @@ from ZenPacks.zenoss.XenMonitor.modeler.plugins.zenoss.cmd.Xen \
 
 
 class TestXen(BaseTestCase):
-    def setUp(self):
-        BaseTestCase.setUp(self)
+    def afterSetUp(self):
+        super(TestXen, self).afterSetUp()
         self.adm = ApplyDataMap()
         self.plugin = Xen()
         self.device = self.dmd.Devices.createInstance('testDevice')
