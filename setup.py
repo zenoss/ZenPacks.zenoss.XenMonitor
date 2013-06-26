@@ -6,7 +6,7 @@ VERSION = '1.1.0'
 AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
-INSTALL_REQUIRES = ['ZenPacks.zenoss.ZenossVirtualHostMonitor', 'Zenoss >= 2.2']
+INSTALL_REQUIRES = ['ZenPacks.zenoss.ZenossVirtualHostMonitor']
 PREV_ZENPACK_NAME = ''
 COMPAT_ZENOSS_VERS = '>= 2.2'
 # STOP_REPLACEMENTS
