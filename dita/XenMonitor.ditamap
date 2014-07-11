@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+   <title>XenMonitor</title>
+   <topicref href="topics/XenMonitor.dita">
+      <topicref href="topics/XenMonitor_ref-Prerequisites.dita"/>
+      <topicref href="topics/XenMonitor_task-Model-Hosts-and-Guest.dita"/>
+      <topicref href="topics/XenMonitor_ref-Daemons.dita"/>
+      <topicref href="topics/XenMonitor_ref-Monitoring-with-sudo.dita"/>
+   </topicref>
+</map>

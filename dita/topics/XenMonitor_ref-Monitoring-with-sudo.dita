@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="d63e200"><title>Monitoring with sudo</title><refbody><section><p>To configure <cmdname>sudo</cmdname> in order to run the <cmdname>xm</cmdname>
+        on the Virtual Machine Host, you will need to modify a few things.</p><ul>
+      <li>
+        <p>Modify the <varname>zCommandPath</varname> zProperty to be blank, otherwise this path
+        will be pre-pended to the <cmdname>sudo</cmdname> command.</p>
+      </li>
+
+      <li>
+        <p>Modify the <varname>zCommandUsername</varname> and
+        <varname>zCommandPassword</varname> configuration properties to be a non-root user
+        with <cmdname>sudo</cmdname> access to the <cmdname>xm</cmdname> command.</p>
+      </li>
+
+
+      <li>
+        <p>Modify the <filepath>Xen.py</filepath> modeler to add the <cmdname>sudo</cmdname> command.
+        The modeler can be found under the
+        <filepath>$ZENHOME/ZenPacks/ZenPacks.zenoss.ZenossVirtualHostMonitor</filepath>
+        directory, under the
+        <filepath>modeler/plugins</filepath> directory.</p>
+      </li>
+
+      <li>
+        <p>Modify the performance templates.</p>
+        <ol>
+          <li><p>Navigate to the <filepath>/Devices/Server/Virtual Machine Host/Xen</filepath>
+          device class</p></li>
+          <li><p>From the device class click on the <uicontrol outputclass="guibutton">Templates</uicontrol>
+          tab</p></li>
+          <li><p>Click on the <uicontrol outputclass="guibutton">VirtualMachine</uicontrol> performance template</p></li>
+<li><p>In the <uicontrol outputclass="guibutton">Data Sources</uicontrol> table, click on the <uicontrol outputclass="guibutton">resources</uicontrol> Data Source</p></li>
+<li><p>Edit the command template to add the <cmdname>sudo</cmdname> command to the beginning of the <cmdname>xm</cmdname> command</p></li>
+</ol>
+      </li>
+
+    </ul></section></refbody></reference>

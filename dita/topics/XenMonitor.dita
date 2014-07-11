@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="referenceid">
+  <title>(XenMonitor) Xen Virtual Hosts</title>
+  <shortdesc>The <zenpack>ZenPacks.zenoss.XenMonitor</zenpack> ZenPack monitors Xen para-virtualized domains.</shortdesc>
+  <refbody>
+    <section>
+      <p>With this ZenPack, the <cmdname>zenmodeler</cmdname> can discover guests running on Xen hosts,
+        and <ph conkeyref="names/platform"/> includes screens and templates for collecting and displaying
+        resources allocated to guests.</p>
+    </section>
+  </refbody>
+</reference>

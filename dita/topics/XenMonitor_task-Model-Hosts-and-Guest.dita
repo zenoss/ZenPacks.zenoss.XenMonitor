@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="d63e95"><title>Model Hosts and Guest</title><taskbody><context><p>For each Xen server, follow this procedure:</p></context><steps-informal><ol>
+      <li>
+        <p>Optionally, place an SSH key to your Xen server to allow the
+        zenoss user from the <ph conkeyref="names/platform"/> server to log in as root without requiring further
+        credentials.</p>
+      </li>
+
+      <li>
+        <p>Create the Xen server in the <keyword outputclass="classname">/Servers/Virtual
+        Hosts/Xen</keyword> device class.</p>
+
+        <note type="warning">
+          <p>If you have this server modeled already, remove the server and
+          recreate it under the Xen device class. Do not move it.</p>
+        </note>
+      </li>
+
+      <li>
+        <p>Select the <uicontrol outputclass="guilabel">Guest</uicontrol> menu and ensure that the
+        guest hosts were found during the modeling process.</p>
+      </li>
+    </ol></steps-informal></taskbody></task>
